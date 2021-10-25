@@ -1,6 +1,6 @@
-<?php
+<?php use Illuminate\Support\Facades\Route;
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Practices\ComebackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ComebackController::class, 'comebacks'])->name('c.home');

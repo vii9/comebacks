@@ -9,7 +9,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 
-class SentEmailToAdminWhenCreateNewUserNotification extends Notification
+class SentEmailToAdminWhenCreateNewUserNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 

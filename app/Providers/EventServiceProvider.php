@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+//use App\Events\UserEvent;
+//use App\Listeners\UpdateUserEvent;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,6 +20,10 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        //@shouldDiscoverEvents = true => can remove UserEvent it
+//        UserEvent::class => [
+//            UpdateUserEvent::class
+//        ]
     ];
 
     /**
@@ -29,4 +35,9 @@ class EventServiceProvider extends ServiceProvider
     {
         //
     }
+
+//    public function shouldDiscoverEvents()
+//    {
+//        return true;
+//    }
 }

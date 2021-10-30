@@ -19,9 +19,9 @@ class UserPostTableSeeder extends Seeder
     {
         $user = User::create([
             'name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
+            'email' => 'thanh130ss@gmail.com',
             'password' => Hash::make('password'),
-            //'remember_token' => Str::random(10),
+            'is_admin' => 1,
         ]);
 
         Post::create([
@@ -44,9 +44,9 @@ class UserPostTableSeeder extends Seeder
 
         $user2 = User::create([
             'name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
+            'email' => 'ag.thanhz@gmail.com',
             'password' => Hash::make('password'),
-            //'remember_token' => Str::random(10),
+            'is_admin' => 1,
         ]);
 
         Post::create([
@@ -63,6 +63,30 @@ class UserPostTableSeeder extends Seeder
 
         Post::create([
             'user_id' => $user2->id,
+            'title' => Str::random(10),
+            'contents' => Str::random(180)
+        ]);
+
+        $user3 = User::create([
+            'name' => Str::random(10),
+            'email' => 'dn2minh@gmail.com',
+            'password' => Hash::make('password'),
+        ]);
+
+        Post::create([
+            'user_id' => $user3->id,
+            'title' => Str::random(10),
+            'contents' => Str::random(180)
+        ]);
+
+        Post::create([
+            'user_id' => $user3->id,
+            'title' => Str::random(10),
+            'contents' => Str::random(180)
+        ]);
+
+        Post::create([
+            'user_id' => $user3->id,
             'title' => Str::random(10),
             'contents' => Str::random(180)
         ]);

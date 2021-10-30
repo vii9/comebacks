@@ -2,5 +2,20 @@
 
 # Docs Laravel
 
+```
+#refresh database
+$ >   php artisan migrate:fresh [--seed]
 
+# setup sent gmail
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.googlemail.com
+MAIL_PORT=465
+MAIL_USERNAME=yourEmail@gmail.com
+MAIL_PASSWORD=yourPasswordEmail
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=yourEmail@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"
+PHP_FPM_INSTALL_EXIF=true
+#End Mail Config
+```
 

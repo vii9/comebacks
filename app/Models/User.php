@@ -13,6 +13,15 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $table = 'users';
+//    protected $dispatchesEvents = [
+//        /****
+//         * when
+//         * $user = User::create()
+//         * \App\Event\UserEvent::dispatch($user);
+//         * change => simple defined property
+//         */
+//        'created' => UserEvent::class
+//    ];
 
     /**
      * The attributes that are mass assignable.

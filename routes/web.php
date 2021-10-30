@@ -1,6 +1,8 @@
-<?php use Illuminate\Support\Facades\Route;
+<?php
 
 use App\Http\Controllers\Practices\ComebackController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auths\UserRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +15,10 @@ use App\Http\Controllers\Practices\ComebackController;
 |
 */
 
-Route::get('/', [ComebackController::class, 'comebacks'])->name('c.home');
+Route::name('c.')->group(function() {
+    Route::get('/', [ComebackController::class, 'comebacks'])->name('home');
+    Route::get('/u-create', [UserRegisterController::class, 'createUser'])->name('u.create');
+    Route::get('/err', [UserRegisterController::class, 'errTransaction'])->name('err');
+    Route::get('/welcome-mail', [UserRegisterController::class, 'welcomeMail'])->name('goto-mail');
+});
+
